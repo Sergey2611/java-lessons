@@ -10,7 +10,7 @@ public class Main {
 	    int n;
 	    int summ = 0;
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите размер массива");
+        System.out.println("Введите размерность массива");
         n = scanner.nextInt();
         System.out.println("Введите k");
         k = scanner.nextInt();
