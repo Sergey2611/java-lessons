@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
-        System.out.println("Введите размерность массива");
+        System.out.println("Введите размер массива");
         int size = scanner.nextInt();
         int[] mass1 = new int[size];
         for (int i = 0; i < size; i++) {
