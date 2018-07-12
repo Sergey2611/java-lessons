@@ -15,6 +15,7 @@ public class Main {
         int[] mass1 = new int[size];
         for (int i = 0; i < size; i++) {
             mass1[i] = random.nextInt(100);
+            if (random.nextInt(2)>0) mass1[i] *= (-1);
         }
 
         System.out.println("Исходный массив");
