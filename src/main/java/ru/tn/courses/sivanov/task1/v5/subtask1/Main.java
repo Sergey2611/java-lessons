@@ -30,8 +30,13 @@ public class Main {
             }
         }
         Arrays.sort(mass1);
-        Arrays.sort(mass2);
         System.out.println(Arrays.toString(mass1));
-        System.out.println(Arrays.toString(mass2));
+
+        if (z==0){
+            System.out.println("Четных чисел в исходном массиве нет");
+        } else {
+            Arrays.sort(mass2);
+            System.out.println(Arrays.toString(mass2));
+        }
     }
 }

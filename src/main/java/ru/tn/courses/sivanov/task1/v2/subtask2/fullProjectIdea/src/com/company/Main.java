@@ -19,8 +19,7 @@ public class Main {
 
         Bank[] arrBanks = new Bank[n];
         for (int i = 0; i < n; i++) {
-            crs = (int) ((random.nextFloat()*10 + (random.nextInt(80))));
-                arrBanks[i] = new Bank(crs, "bank" + (i+1));
+            arrBanks[i] = new Bank((int)(random.nextFloat()*10 + (random.nextInt(80))), "bank" + (i+1));
         }
 
         Arrays.sort(arrBanks, Bank.CourseComparator);
