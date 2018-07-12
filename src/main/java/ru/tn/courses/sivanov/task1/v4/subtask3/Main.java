@@ -22,18 +22,17 @@ public class Main {
         System.out.println(Arrays.toString(mass1));
 
         int element;
-        for (int i = 1; i < mass1.length; i++) {  // 10 2 4 71 5 23
+        for (int i = 1; i < mass1.length; i++) {
             element = mass1[i];
             int j = i - 1;
-            while (j >= 0 &&  element < mass1[j]){
-                mass1[j+1]=mass1[j];
+            while (j >= 0 && element < mass1[j]) {
+                mass1[j + 1] = mass1[j];
                 j--;
             }
-            mass1[j+1]=element;
+            mass1[j + 1] = element;
         }
 
         System.out.println("Отсортированный массив");
         System.out.println(Arrays.toString(mass1));
-
     }
 }
