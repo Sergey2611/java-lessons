@@ -10,16 +10,16 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите размерность массива");
-        int size = scanner.nextInt();
-        int[] mass1 = new int[size];
+        int sizeOfArray = scanner.nextInt();
+        int[] mass1 = new int[sizeOfArray];
 
-        if (size == 1) {
+        if (sizeOfArray == 1) {
             System.out.println("Массив состоит из одного числа, то есть не является последовательностью");
             System.exit(0);
         }
 
         System.out.println("Введите элементы массива");
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < sizeOfArray; i++) {
             mass1[i] = scanner.nextInt();
         }
 

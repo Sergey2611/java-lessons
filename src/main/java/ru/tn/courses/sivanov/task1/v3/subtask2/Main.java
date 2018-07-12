@@ -39,9 +39,9 @@ public class Main {
         }
 
         if (firstCube + secondCube >= 4 && firstCube + secondCube <= 9) {
-            System.out.println("Для того, чтобы дверь открылась, нужно рядом с первыми двумя кубами вставить третий, с гранью с " + (10 - (firstCube + secondCube)) + " точками");
+            System.out.println("Для того, чтобы дверь открылась, нужно рядом с первыми двумя кубами вставить третий куб гранью с " + (10 - (firstCube + secondCube)) + " точками");
             System.out.println("Тогда мы получим комбинацию: " + firstCube + ", " + secondCube + ", " + (10 - (firstCube + secondCube)) + ", равную 10");
-        } else if (firstCube + secondCube >= 10 ) {
+        } else if (firstCube + secondCube >= 10) {
             System.out.println("Т.к. сумма двух вставленных кубов больше или равна десяти, придется вставить еще два куба, ведь по условию дверь откроется, если сумма трех кубов равна 10");
             int k = 10 - secondCube; // 4,5,6
             int thirdCube = random.nextInt(k - 1) + 1;

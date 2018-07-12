@@ -7,21 +7,21 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        int n = 0, m = 0;
+        int sizeOfArray = 0;
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите размеры последовательностей чисел (положительное целое число)");
         try {
-            n = scanner.nextInt();
+            sizeOfArray = scanner.nextInt();
 
         } catch (Exception e) {
             System.out.println("Введено не число, либо введено дробное/отрицательное число");
             System.exit(0);
         }
-        int[] mass1 = new int[n];
-        int[] mass2 = new int[n];
+        int[] mass1 = new int[sizeOfArray];
+        int[] mass2 = new int[sizeOfArray];
         Random random = new Random();
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < sizeOfArray; i++) {
             mass1[i] = random.nextInt(100);
             mass2[i] = random.nextInt(100);
         }
@@ -34,7 +34,7 @@ public class Main {
         mass1 = Arrays.copyOf(mass1, mass1.length + mass2.length);
 
         for (int i = mass2.length; i < mass1.length; i++) {
-            mass1[i] = mass2[i-mass2.length];
+            mass1[i] = mass2[i - mass2.length];
         }
         Arrays.sort(mass1);
 

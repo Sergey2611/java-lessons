@@ -11,39 +11,39 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         System.out.println("Введите высоту дерева в метрах");
-        int high = scanner.nextInt() * 100;
+        int highOfTree = scanner.nextInt() * 100;
         System.out.println("Введите положение улитки на дереве в сантиметрах");
-        int firstposition = scanner.nextInt();
+        int snailFirstPosition = scanner.nextInt();
 
-        while (firstposition <= 0 || firstposition > high) {
+        while (snailFirstPosition <= 0 || snailFirstPosition > highOfTree) {
             System.out.println("Улитка должна быть на дереве \nВведите положение улитки заново");
-            firstposition = scanner.nextInt();
+            snailFirstPosition = scanner.nextInt();
         }
 
-        int position = firstposition;
+        int snailRealPosition = snailFirstPosition;
         int size = 30;
         int[] mass1 = new int[size];
         for (int i = 0; i < size; i++) {
             mass1[i] = random.nextInt(2);
             if (mass1[i] == 1) {
-                position += 2;
+                snailRealPosition += 2;
             } else {
-                position--;
+                snailRealPosition--;
             }
         }
 
-        if (position > 0 && position < high) {
-            System.out.println("Положение улитки через 30 дней - " + position + " см");
-            if (position > firstposition) {
-                System.out.println("Улитка поднялась на " + (position - firstposition) + " см");
-            } else if (position == firstposition) {
+        if (snailRealPosition > 0 && snailRealPosition < highOfTree) {
+            System.out.println("Положение улитки через 30 дней - " + snailRealPosition + " см");
+            if (snailRealPosition > snailFirstPosition) {
+                System.out.println("Улитка поднялась на " + (snailRealPosition - snailFirstPosition) + " см");
+            } else if (snailRealPosition == snailFirstPosition) {
                 System.out.println("Улитка осталась на том же месте");
-            } else if (position < firstposition) {
-                System.out.println("Улитка спустилась на " + (firstposition - position) + " см");
+            } else if (snailRealPosition < snailFirstPosition) {
+                System.out.println("Улитка спустилась на " + (snailFirstPosition - snailRealPosition) + " см");
             }
-        } else if (position <= 0) {
+        } else if (snailRealPosition <= 0) {
             System.out.println("Улитка слезла с дерева");
-        } else if (position >= high) {
+        } else if (snailRealPosition >= highOfTree) {
             System.out.println("Улитка поднялась на верхушку дерева");
         }
     }

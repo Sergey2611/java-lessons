@@ -1,25 +1,24 @@
 package com.company;
 
-        import java.util.Random;
-        import java.util.Scanner;
+import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        int size;
-        int time;
+        int sizeOfQueue;
         int numberOfClient;
-        int timeOfWaitingInMinutes;
+        int timeOfWaitingInMinutes = 0;
         int timeOfWaitingInHours = 0;
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите размер очереди");
-        size = scanner.nextInt();
+        sizeOfQueue = scanner.nextInt();
         System.out.println("Введите время обслуживания в минутах");
         timeOfWaitingInMinutes = scanner.nextInt();
 
-        int[] queue = new int[size];
-        for (int i = 0; i < size; i++) {
+        int[] queue = new int[sizeOfQueue];
+        for (int i = 0; i < sizeOfQueue; i++) {
             queue[i] = i + 1;
         }
 

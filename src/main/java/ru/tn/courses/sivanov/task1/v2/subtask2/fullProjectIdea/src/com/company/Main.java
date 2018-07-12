@@ -8,33 +8,32 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int dlr;
-        int n;
-        int crs;
+        int dollars;
+        int numberOfBanks;
         Random random = new Random();
         System.out.println("Введите количество ваших долларов");
-        dlr = scanner.nextInt();
+        dollars = scanner.nextInt();
         System.out.println("Введите количество банков в городе");
-        n = scanner.nextInt();
+        numberOfBanks = scanner.nextInt();
 
-        Bank[] arrBanks = new Bank[n];
-        for (int i = 0; i < n; i++) {
-            arrBanks[i] = new Bank((int)(random.nextFloat()*10 + (random.nextInt(80))), "bank" + (i+1));
+        Bank[] arrBanks = new Bank[numberOfBanks];
+        for (int i = 0; i < numberOfBanks; i++) {
+            arrBanks[i] = new Bank((int) (random.nextFloat() * 10 + (random.nextInt(80))), "bank" + (i + 1));
         }
 
         Arrays.sort(arrBanks, Bank.CourseComparator);
 
         System.out.println("Сортировка по курсу:");
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < numberOfBanks; i++) {
             System.out.println(arrBanks[i]);
         }
 
         System.out.println("Выгоднее всего обменивать деньги в банках(e):");
-        for (int i = n; i > 0; i--) {
-            if (arrBanks[n-1].getCourse() == arrBanks[i-1].getCourse()) {
-                System.out.println(arrBanks[i-1].getName());
+        for (int i = numberOfBanks; i > 0; i--) {
+            if (arrBanks[numberOfBanks - 1].getCourse() == arrBanks[i - 1].getCourse()) {
+                System.out.println(arrBanks[i - 1].getName());
             }
         }
-        System.out.println("В данных(ом) банках(е) вы получите после обмена " + dlr + " долларов " + arrBanks[n-1].exchange(dlr) + " рублей");
+        System.out.println("В данных(ом) банках(е) вы получите после обмена " + dollars + " долларов " + arrBanks[numberOfBanks - 1].exchange(dollars) + " рублей");
     }
 }

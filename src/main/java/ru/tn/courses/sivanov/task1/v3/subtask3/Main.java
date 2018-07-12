@@ -11,12 +11,11 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         System.out.println("Введите размерность массива");
-        int size = scanner.nextInt();
+        int sizeOfArray = scanner.nextInt();
         int howManySwaps = 0;
-        int k = 0;
-        int[] mass1 = new int[size];
+        int[] mass1 = new int[sizeOfArray];
 
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < sizeOfArray; i++) {
             mass1[i] = random.nextInt(10);
             if (random.nextInt(2) > 0) {
                 mass1[i] = mass1[i] * (-1);
@@ -26,10 +25,10 @@ public class Main {
         System.out.println("Исходный массив");
         System.out.println(Arrays.toString(mass1));
 
-        for (int i = 0; i < size - 1; i++) {
-            for (int j = i + 1; j < size; j++) {
+        for (int i = 0; i < sizeOfArray - 1; i++) {
+            for (int j = i + 1; j < sizeOfArray; j++) {
                 if (mass1[j] < mass1[i]) {
-                    k = mass1[j];
+                    int k = mass1[j];
                     mass1[j] = mass1[i];
                     mass1[i] = k;
                     howManySwaps += 1;

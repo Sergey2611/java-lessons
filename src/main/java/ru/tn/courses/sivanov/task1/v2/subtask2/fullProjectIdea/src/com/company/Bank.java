@@ -44,7 +44,7 @@ public class Bank {
                 '}';
     }
 
-    public static Comparator<Bank> CourseComparator = new Comparator<Bank>(){
+    public static Comparator<Bank> CourseComparator = new Comparator<Bank>() {
         @Override
         public int compare(Bank o1, Bank o2) {
             return (int) (o1.getCourse() - o2.getCourse());
@@ -52,7 +52,7 @@ public class Bank {
     };
 
     public int exchange(int dollars) {
-        int rub = dollars*this.course;
+        int rub = dollars * this.course;
         return rub;
     }
 }
